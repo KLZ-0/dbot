@@ -20,17 +20,19 @@ class Base(commands.Cog):
     async def on_message(self, message):
         channel = message.channel
 
-        if message.content.lower().startswith(messages.uhoh) and not message.author.bot:
-            await channel.send(messages.uhoh)
+        if not message.author.bot:
+            # React to user messages only
+            if message.content.lower().startswith(messages.uhoh):
+                await channel.send(messages.uhoh)
 
-        elif "PR" in message.content:
-            await channel.send(messages.pr_meme)
+            elif "PR" in message.content:
+                await channel.send(messages.pr_meme)
 
-        elif messages.gn in message.content:
-            await channel.send(messages.gn)
+            elif messages.gn in message.content:
+                await channel.send(messages.gn)
 
-        elif messages.gm in message.content:
-            await channel.send(messages.gm)
+            elif messages.gm in message.content:
+                await channel.send(messages.gm)
 
     #                                    #
     #      Invalid command handler       #
