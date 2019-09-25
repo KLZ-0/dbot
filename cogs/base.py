@@ -28,12 +28,6 @@ class Base(commands.Cog):
             elif "PR" in message.content:
                 await channel.send(messages.pr_meme)
 
-            elif messages.gn == message.content.lower():
-                await channel.send(messages.gn)
-
-            elif messages.gm == message.content.lower():
-                await channel.send(messages.gm)
-
     #                                    #
     #      Invalid command handler       #
     #                                    #
