@@ -32,8 +32,14 @@ class Timetable(commands.Cog):
                 # filter IEL, allow only odd weeks
                 continue
 
-            daystr += messages.tt_line.format(
-                name=line[1], start=line[2], end=line[3], rooms=line[4], detail=line[5])
+            if line[6]:
+                #subject not important 
+                daystr += messages.tt_line_sleep.format(
+                    name=line[1], start=line[2], end=line[3], rooms=line[4], detail=line[5])
+
+            else:
+                daystr += messages.tt_line.format(
+                    name=line[1], start=line[2], end=line[3], rooms=line[4], detail=line[5])
 
         if weekday in semester.prezuvky:
             daystr += messages.tt_prezuvky_needed

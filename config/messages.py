@@ -12,6 +12,7 @@ class Messages:
 
     tt_header = "Rozvrh na {day}:"
     tt_line = "\n`{name} od {start} do {end} v [{rooms}] : {detail}`"
+    tt_line_sleep = "\n~~`{name} od {start} do {end} v [{rooms}] : {detail}`~~"
     tt_prezuvky_needed = "\nBring yo slippers!"
     tt_db_error = "Timetable database not found!"
 
