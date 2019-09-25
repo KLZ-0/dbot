@@ -93,18 +93,5 @@ class Cmds(commands.Cog):
         # NOTE: Help does not work (reserved)
         await ctx.send(util.command_list())
 
-
-    #                           #
-    #      General methods      #
-    #                           #
-
-    # def parseTime(self, strtime):
-    #     """Parses time from remindme parameters
-    #     returns seconds
-    #     """
-    #     print(strtime)
-    #     return strtime
-
-
 def setup(bot):
     bot.add_cog(Cmds(bot))

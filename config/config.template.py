@@ -2,7 +2,7 @@ class Config:
     key = ""
     command_prefix = "!"
 
-    extensions = ["base", "cmds", "timetable"]
+    extensions = ["base", "cmds", "timetable", "parser"]
 
     tt_db = "timetable.db"
     bot_room_id = 624919976561737728
