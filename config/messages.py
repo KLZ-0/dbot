@@ -1,5 +1,7 @@
 class Messages:
     uhoh = "uh oh"
+    gn = "gn"
+    gm = "gm"
     pr_meme = "https://github.com/KLZ-0/dbot/pulls"
     godhelp_meme = "https://www.lli.vutbr.cz/psychologicke-poradenstvi"
     test_success = "Test successful!"
