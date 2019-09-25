@@ -22,16 +22,16 @@ class Base(commands.Cog):
 
         if not message.author.bot:
             # React to user messages only
-            if message.content.lower().startswith(messages.uhoh):
+            if messages.uhoh in message.content.lower():
                 await channel.send(messages.uhoh)
 
             elif "PR" in message.content:
                 await channel.send(messages.pr_meme)
 
-            elif messages.gn in message.content:
+            elif messages.gn == message.content.lower():
                 await channel.send(messages.gn)
 
-            elif messages.gm in message.content:
+            elif messages.gm == message.content.lower():
                 await channel.send(messages.gm)
 
     #                                    #
