@@ -46,7 +46,7 @@ class Cmds(commands.Cog):
         await ctx.send(messages.cmd_hug.format(user=user))
 
     @commands.command()
-    async def remindme(self, ctx, t_val: int = 1, t_unit: str = "m", remindstring: str = "Reminder"):
+    async def remindme(self, ctx, t_val: int = 1, t_unit: str = "m", *args):
         """Reminds the user in n timeunits, with a specified message.
         Valid timeunits are:
         s -> second(s)
@@ -67,7 +67,7 @@ class Cmds(commands.Cog):
         await ctx.message.add_reaction("✅")
 
         await asyncio.sleep(secs)
-        await ctx.send(f"<@{ctx.author.id}>  " + remindstring)
+        await ctx.send(f"<@{ctx.author.id}>  " + " ".join(args))
 
     @commands.command()
     async def week(self, ctx):
