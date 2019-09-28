@@ -47,6 +47,10 @@ class Timetable(commands.Cog):
             await ctx.send(messages.tt_db_error)
             return
 
+        if weekday < 1 or weekday > 5:
+            await ctx.send(messages.tt_day_error)
+            return
+
         await ctx.send(self.getTimetable(weekday-1))
 
    

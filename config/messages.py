@@ -14,6 +14,7 @@ class Messages:
     tt_line = "\n`{name} od {start} do {end} v [{rooms}] : {detail}`"
     tt_prezuvky_needed = "\nBring yo slippers!"
     tt_db_error = "Timetable database not found!"
+    tt_day_error = "No timetable for this day!"
 
     err_unknown_command = "Invalid command, try one of these:\n{commandlist}"
     err_arg_remindme = "invalid time unit"
