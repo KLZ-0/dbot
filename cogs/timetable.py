@@ -42,7 +42,11 @@ class Timetable(commands.Cog):
         return daystr
 
     @commands.command()
-    async def rozvrh(self, ctx, weekday: int = datetime.datetime.today().weekday()+1):
+    async def rozvrh(self, ctx, weekday: int = -1):
+        if weekday == -1:
+            # guess the current weekday if no argument is given
+            weekday = datetime.datetime.today().weekday()+1
+
         if not os.path.isfile(getattr(config, "tt_db", "timetable.db")):
             await ctx.send(messages.tt_db_error)
             return
