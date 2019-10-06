@@ -42,7 +42,14 @@ class Timetable(commands.Cog):
         return daystr
 
     @commands.command()
-    async def rozvrh(self, ctx, weekday: int = -1):
+    async def rozvrh(self, ctx, weekday: str = "-1"):
+        try:
+            weekday = int(weekday)
+        except ValueError:
+            """Warn the user politely when the conversion is not possible"""
+            await ctx.send(messages.conversion_meme.format(invalid_int=weekday))
+            return
+
         if weekday == -1:
             # guess the current weekday if no argument is given
             weekday = datetime.datetime.today().weekday()+1

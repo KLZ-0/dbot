@@ -46,13 +46,19 @@ class Cmds(commands.Cog):
         await ctx.send(messages.cmd_hug.format(user=user))
 
     @commands.command()
-    async def remindme(self, ctx, t_val: int = 1, t_unit: str = "m", *args):
+    async def remindme(self, ctx, t_val: str = 1, t_unit: str = "m", *args):
         """Reminds the user in n timeunits, with a specified message.
         Valid timeunits are:
         s -> second(s)
         m -> minute(s)
         h -> hour(s)
         """
+        try:
+            t_val = int(t_val)
+        except ValueError:
+            """Warn the user politely when the conversion is not possible"""
+            await ctx.send(messages.conversion_meme.format(invalid_int=t_val))
+            return
 
         if t_unit.startswith("s"):
             secs = t_val
