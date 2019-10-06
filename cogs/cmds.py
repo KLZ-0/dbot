@@ -46,6 +46,20 @@ class Cmds(commands.Cog):
         await ctx.send(messages.cmd_hug.format(user=user))
 
     @commands.command()
+    async def godfuck(self, ctx, user: discord.Member = None):
+        """For those people who try to not play fair"""
+
+        if user is None:
+            return
+
+        if user.id != config.klz_id:
+            await ctx.send("You don't have the permission to use this command")
+            return
+
+        user = discord.utils.escape_markdown(user.display_name)
+        await ctx.send(messages.cmd_fuck.format(user=user))
+
+    @commands.command()
     async def remindme(self, ctx, t_val: str = 1, t_unit: str = "m", *args):
         """Reminds the user in n timeunits, with a specified message.
         Valid timeunits are:
