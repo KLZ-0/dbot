@@ -46,7 +46,7 @@ class Cmds(commands.Cog):
         await ctx.send(messages.cmd_hug.format(user=user))
 
     @commands.command()
-    async def godfuck(self, ctx, user: discord.Member = None):
+    async def fuckyou(self, ctx, user: discord.Member = None):
         """For those people who try to not play fair"""
 
         if user is None:
