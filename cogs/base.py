@@ -21,6 +21,9 @@ class Base(commands.Cog):
         if isinstance(error, commands.errors.CommandNotFound):
             await ctx.send(messages.err_unknown_command.format(commandlist=util.command_list()))
 
+        elif isinstance(error, commands.errors.BadArgument):
+            await ctx.send(messages.conversion_error)
+
         else:
             output = f"Ignoring exception in command {ctx.command}:\n"
             output += "".join(traceback.format_exception(type(error),

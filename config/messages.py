@@ -3,6 +3,7 @@ class Messages:
     pr_meme = "https://github.com/KLZ-0/dbot/pulls"
     godhelp_meme = "https://www.lli.vutbr.cz/psychologicke-poradenstvi"
     conversion_meme = "Give me a **valid** piece of information you fucking bastard!\nHow should I convert `{invalid_int}` to an integer?"
+    conversion_error = "Give me a **valid** piece of information you fucking bastard!"
     test_success = "Test successful!"
     cmd_dt = "Current datetime is {datetime}"
     cmd_hug = "<:peepoHug:625338190911373318> **{user}**"
