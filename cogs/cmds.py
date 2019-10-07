@@ -67,7 +67,7 @@ class Cmds(commands.Cog):
         await ctx.send(messages.cmd_fuck.format(user=user))
 
     @commands.command()
-    async def remindme(self, ctx, t_val: str = 1, t_unit: str = "m", *args):
+    async def remindme(self, ctx, t_val: str = "1", t_unit: str = "m", *args):
         """Reminds the user in n timeunits, with a specified message.
         Valid timeunits are:
         s -> second(s)
