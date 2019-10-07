@@ -36,6 +36,13 @@ class Cmds(commands.Cog):
         await ctx.send(messages.cmd_dt.format(datetime=dt))
 
     @commands.command()
+    async def sayd(self, ctx, *args):
+        """Repeats the user's message and deletes the original"""
+        
+        await ctx.message.delete()
+        await ctx.send(" ".join(args))
+
+    @commands.command()
     async def hug(self, ctx, user: discord.Member = None):
         """Because everyone likes hugs (totally not copied from rubbergod)"""
 
