@@ -7,7 +7,7 @@ class Messages:
     test_success = "Test successful!"
     cmd_dt = "Current datetime is {datetime}"
     cmd_hug = "<:peepoHug:625338190911373318> **{user}**"
-    cmd_fuck = "<:smrckaBat:630540071358955552> **{user}**"
+    cmd_fuck = "<:smrckaBat:630492242142035968> **{user}**"
 
     days_cz = ["pondělí", "úterý", "středa", "čtvrtek", "pátek"]
     tt_days_cz = ["pondělí", "úterý", "středu", "čtvrtek", "pátek"]

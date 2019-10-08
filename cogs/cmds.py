@@ -59,7 +59,7 @@ class Cmds(commands.Cog):
         if user is None:
             return
 
-        if user.id != config.klz_id:
+        if ctx.author.id != config.admin_id:
             await ctx.send("You don't have the permission to use this command")
             return
 

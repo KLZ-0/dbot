@@ -10,4 +10,4 @@ class Config:
     bot_room_id = 624919976561737728
     bot_dev_id = 624895168839024647
 
-    klz_id = 0
+    admin_id = 0
