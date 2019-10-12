@@ -11,3 +11,4 @@ class Config:
     bot_dev_id = 624895168839024647
 
     admin_id = 0
+    guild_id = 0

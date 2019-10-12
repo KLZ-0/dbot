@@ -5,6 +5,8 @@ class Messages:
     conversion_meme = "Give me a **valid** piece of information you fucking bastard!\nHow should I convert `{invalid_int}` to an integer?"
     conversion_error = "Give me a **valid** piece of information you fucking bastard!"
     command_arg_error = "Invalid command arguments"
+    sayd_server_error = "You are not in the discord server with the specified ID"
+    sayd_channel_error = "Specified channel `{target_channel}` not found, message dropped into bot-room"
     test_success = "Test successful!"
     cmd_dt = "Current datetime is {datetime}"
     cmd_hug = "<:peepoHug:625338190911373318> **{user}**"

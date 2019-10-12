@@ -36,11 +36,31 @@ class Cmds(commands.Cog):
         await ctx.send(messages.cmd_dt.format(datetime=dt))
 
     @commands.command()
-    async def sayd(self, ctx, *args):
+    async def sayd(self, ctx, target_channel: str = None, *args):
         """Repeats the user's message and deletes the original"""
-        
-        await ctx.message.delete()
-        await ctx.send(" ".join(args))
+
+        if isinstance(ctx.message.channel, discord.DMChannel):
+            guild = self.bot.get_guild(config.guild_id)
+            if guild.get_member(ctx.message.author.id):
+                for channel in guild.text_channels:
+                    if channel.name.lower() == target_channel.lower():
+                        await channel.send(" ".join(args))
+                        return
+                
+                # If channel name was not matched - drop mesage into bot-room
+                await ctx.send(messages.sayd_channel_error.format(target_channel=target_channel))
+                await guild.get_channel(config.bot_room_id).send(target_channel + " " + " ".join(args))
+
+            else:
+                await ctx.send(messages.sayd_server_error)
+                return
+
+        else:
+            if target_channel == None:
+                return
+
+            await ctx.message.delete()
+            await ctx.send(target_channel + " " + " ".join(args))
 
     @commands.command()
     async def hug(self, ctx, user: discord.Member = None):
