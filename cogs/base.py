@@ -24,6 +24,15 @@ class Base(commands.Cog):
         elif isinstance(error, commands.errors.BadArgument):
             await ctx.send(messages.conversion_error)
 
+        elif isinstance(error, commands.errors.InvalidEndOfQuotedStringError):
+            await ctx.send(messages.command_arg_error)
+        
+        elif isinstance(error, commands.errors.UnexpectedQuoteError):
+            await ctx.send(messages.command_arg_error)
+
+        elif isinstance(error, commands.errors.ExpectedClosingQuoteError):
+            await ctx.send(messages.command_arg_error)
+
         else:
             output = f"Ignoring exception in command {ctx.command}:\n"
             output += "".join(traceback.format_exception(type(error),
