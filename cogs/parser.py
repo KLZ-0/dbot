@@ -18,15 +18,14 @@ class Parser(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        channel = message.channel
 
         if not message.author.bot:
             # React to user messages only
             if messages.uhoh in message.content.lower():
-                await channel.send(messages.uhoh)
+                await message.channel.send(messages.uhoh)
 
             elif "PR" in message.content:
-                await channel.send(messages.pr_meme)
+                await message.channel.send(messages.pr_meme)
 
 def setup(bot):
     bot.add_cog(Parser(bot))
