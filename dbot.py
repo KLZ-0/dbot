@@ -10,6 +10,7 @@ bot = commands.Bot(command_prefix=config.command_prefix)
 @bot.event
 async def on_ready():
     """If DBOT is ready"""
+    await bot.cogs["Menza"].fetch(debug=True)
     print("Ready")
 
 @bot.command()

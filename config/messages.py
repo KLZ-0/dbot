@@ -22,5 +22,11 @@ class Messages:
     tt_db_error = "Timetable database not found!"
     tt_day_error = "No timetable for this day!"
 
+    menza_help = "Usage: ```!menza get [day]```"
+    menza_fetch_success = "Menza fetched successfully"
+    menza_fetch_failed = "Menza fetch failed"
+    menza_nocommand = "Undefined command <:sadcat:625328839316471819>"
+    menza_get_failed = "Day not found!\n{dates}"
+    
     err_unknown_command = "Invalid command, try one of these:\n{commandlist}"
     err_arg_remindme = "invalid time unit"

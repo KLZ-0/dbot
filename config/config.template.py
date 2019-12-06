@@ -4,7 +4,7 @@ class Config:
     key = ""
     command_prefix = "!"
 
-    extensions = ["base", "cmds", "timetable", "parser"]
+    extensions = ["base", "cmds", "timetable", "parser", "menza"]
 
     tt_db = os.path.join(os.path.dirname(__file__), "timetable.db")
     bot_room_id = 624919976561737728
