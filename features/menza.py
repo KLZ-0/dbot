@@ -110,6 +110,13 @@ class Menza:
         except ValueError:
             return self.getByDate(date)
 
+    def dumpDates(self):
+        # TODO: move date normalization to parsing and generate an error message if a days date can't be normalized
+        return [normalizeDate(d.date) for d in self.days]
+
     def listDates(self):
         nl = "\n\t"
-        return f"Available days are:{nl}{nl.join([d.date for d in self.days])}"
+        return f"Available days are:{nl}{nl.join(self.dumpDates())}"
+
+    def isLoaded(self, date):
+        return normalizeDate(date) in self.dumpDates()

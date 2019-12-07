@@ -26,7 +26,9 @@ class Messages:
     menza_fetch_success = "Menza fetched successfully"
     menza_fetch_failed = "Menza fetch failed"
     menza_nocommand = "Undefined command <:sadcat:625328839316471819>"
-    menza_get_failed = "Day not found!\n{dates}"
+    menza_get_failed = "Day not found <:sadcat:625328839316471819>\n{dates}"
+    menza_sethour_success = "Hour set successfully"
+    menza_sethour_failed = "Sorry but the given value is not in range (0-23) <:sadcat:625328839316471819>"
     
     err_unknown_command = "Invalid command, try one of these:\n{commandlist}"
     err_arg_remindme = "invalid time unit"
