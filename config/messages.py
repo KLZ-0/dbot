@@ -29,6 +29,9 @@ class Messages:
     menza_get_failed = "Day not found <:sadcat:625328839316471819>\n{dates}"
     menza_sethour_success = "Hour set successfully"
     menza_sethour_failed = "Sorry but the given value is not in range (0-23) <:sadcat:625328839316471819>"
+
+    purge_message = "Removed {n} messages"
+    purge_value_error = "Value not in range 1-20"
     
     err_unknown_command = "Invalid command, try one of these:\n{commandlist}"
     err_arg_remindme = "invalid time unit"

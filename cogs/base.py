@@ -45,5 +45,27 @@ class Base(commands.Cog):
                 for message in output:
                     await channel.send(f"```\n{message}\n```")
 
+    @commands.command()
+    async def purge(self, ctx, n, silent = ""):
+        """Remove last n messages"""
+        try:
+            n = int(n) + 1
+        except ValueError:
+            return
+
+        if n < 1 or n > 20:
+            await ctx.send(messages.purge_value_error)
+            return
+
+        ids = []
+        async for message in ctx.channel.history(limit=n):
+            if message.author in [ctx.message.author, self.bot.user]:
+                ids.append(message.id)
+                await message.delete()
+            
+        if not silent:
+            await ctx.send(messages.purge_message.format(n=len(ids)-1))
+        print(ids)
+
 def setup(bot):
     bot.add_cog(Base(bot))
