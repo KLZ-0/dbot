@@ -2,6 +2,7 @@ import re
 import datetime
 import aiohttp
 from bs4 import BeautifulSoup
+import util
 
 all_regex = re.compile("\d*g|\d?\d\.\d?\d\.\d\d\d\d")
 date_regex = re.compile("\d?\d\.\d?\d\.\d\d\d\d")
