@@ -35,7 +35,7 @@ class Day:
         if ret:
             return str({self.date: self.menu})
         else:
-            print(self.dump(True))
+            util.log(self.dump(True))
 
     def __str__(self):
         nl = "\n\t"
@@ -51,7 +51,7 @@ class Menza:
         if ret:
             return str([str(day) for day in self.days])
         else:
-            print(self.dump(True))
+            util.log(self.dump(True))
 
     def __str__(self):
         return self.dump(ret=True)

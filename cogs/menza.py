@@ -26,7 +26,7 @@ class Menza(commands.Cog):
             msg = messages.menza_fetch_failed
         
         if debug:
-            print(msg)
+            util.log(msg)
         else:
             return msg
 
@@ -52,12 +52,12 @@ class Menza(commands.Cog):
     # async def before(self):
     #     await self.bot.wait_until_ready()
 
-    #     print("Started waiting for the specified time")
+    #     util.log("Started waiting for the specified time")
 
     #     while datetime.datetime.now().hour != self.send_hour:
     #         await asyncio.sleep(60)
             
-    #     print("Started menu loop")
+    #     util.log("Started menu loop")
 
     @commands.command()
     async def menza(self, ctx, cmd: str = "", subcmd: str = ""):

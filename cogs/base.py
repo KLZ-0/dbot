@@ -65,7 +65,8 @@ class Base(commands.Cog):
             
         if not silent:
             await ctx.send(messages.purge_message.format(n=len(ids)-1))
-        print(ids)
+
+        util.log(f"<PURGE> {ctx.message.author.display_name} ({ctx.message.author.id}) removed: {str(ids)}")
 
 def setup(bot):
     bot.add_cog(Base(bot))

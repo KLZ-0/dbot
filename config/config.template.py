@@ -4,6 +4,8 @@ class Config:
     key = ""
     command_prefix = "!"
 
+    logfile = "dbot.log"
+
     extensions = ["base", "cmds", "timetable", "parser", "menza"]
 
     tt_db = os.path.join(os.path.dirname(__file__), "timetable.db")
