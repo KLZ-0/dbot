@@ -46,7 +46,7 @@ class Base(commands.Cog):
                     await channel.send(f"```\n{message}\n```")
 
     @commands.command()
-    async def purge(self, ctx, n, silent = ""):
+    async def purge(self, ctx, n = "1", silent = ""):
         """Remove last n messages"""
         try:
             n = int(n) + 1
