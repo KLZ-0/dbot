@@ -23,7 +23,7 @@ class Parser(commands.Cog):
             if messages.uhoh in message.content.lower():
                 await message.channel.send(messages.uhoh)
 
-            elif "PR" in message.content:
+            elif message.content == messages.pr_match:
                 await message.channel.send(messages.pr_meme)
 
     @commands.Cog.listener()

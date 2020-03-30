@@ -1,5 +1,6 @@
 class Messages:
     uhoh = "uh oh"
+    pr_match = "PR"
     pr_meme = "https://github.com/KLZ-0/dbot/pulls"
     godhelp_meme = "https://www.lli.vutbr.cz/psychologicke-poradenstvi"
     conversion_meme = "Give me a **valid** piece of information you fucking bastard!\nHow should I convert `{invalid_int}` to an integer?"
