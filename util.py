@@ -9,6 +9,9 @@ def command_list():
         txt = f.read()
     return txt
 
-def log(message):
-    with open(config.logfile, "a") as f:
-        f.write(f"[{datetime.datetime.now()}] {str(message)}\n")
+def log(*args):
+    if os.getenv("DBOT_SILENTLOG", False):
+        with open(config.logfile, "a") as f:
+            f.write(f"[{datetime.datetime.now()}] {''.join(args)}\n")
+    else:
+        print("".join(args))

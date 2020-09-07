@@ -13,8 +13,6 @@ util.log("====== DBOT STARTED ======")
 @bot.event
 async def on_ready():
     """If DBOT is ready"""
-    util.log("Started fetching")
-    await bot.cogs["Menza"].fetch(debug=True)
     util.log("Ready")
 
 @bot.command()

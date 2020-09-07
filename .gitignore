@@ -1,4 +1,6 @@
 __pycache__/
+.idea/
+venv/
 config.py
 temp.py
 dbot.log

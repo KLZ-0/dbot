@@ -21,8 +21,5 @@
     Repeats the user's message and deletes the original
     <channel> only works in DMs
 
-!rozvrh <weekday>
-    Shows the timetable for a specific day (current if not specified)
-    
 !godhelp
     Why?```
