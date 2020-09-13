@@ -4,3 +4,4 @@ venv/
 config.py
 temp.py
 dbot.log
+dbot.pid
