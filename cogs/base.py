@@ -2,15 +2,36 @@ import discord
 from discord.ext import commands
 import util
 import traceback
+import datetime
 
 from config import config, messages
 config = config.Config
 messages = messages.Messages
 
+boot_time = datetime.datetime.now().replace(microsecond=0)
+
+
 class Base(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
+
+        self.activity = discord.Game(
+            start=datetime.datetime.utcnow(),
+            name="on hash " + util.git_head_hash()[:7])
+
+    async def set_presence(self):
+        await self.bot.change_presence(activity=self.activity)
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        await self.set_presence()
+
+    @commands.command()
+    async def uptime(self, ctx):
+        """Bot uptime"""
+        delta = datetime.datetime.now().replace(microsecond=0) - boot_time
+        await ctx.send(str(delta))
 
     #                                    #
     #      Invalid command handler       #
@@ -67,6 +88,7 @@ class Base(commands.Cog):
             await ctx.send(messages.purge_message.format(n=len(ids)-1))
 
         util.log(f"<PURGE> {ctx.message.author.display_name} ({ctx.message.author.id}) removed: {str(ids)}")
+
 
 def setup(bot):
     bot.add_cog(Base(bot))
