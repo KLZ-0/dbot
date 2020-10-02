@@ -18,7 +18,7 @@ run:
 start: $(PIDFILE)
 
 stop: $(PIDFILE)
-	kill $$(cat $<) && rm $<
+	kill $$(cat $<) ; rm $<
 
 $(PIDFILE):
 	source venv/bin/activate && { $(VARS_DAEMON) python3 dbot.py & echo $$! > $@; }
