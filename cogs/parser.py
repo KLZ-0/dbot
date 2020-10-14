@@ -30,6 +30,7 @@ class Parser(commands.Cog):
                 self.message_cache.append(message.content)
                 if len(set(self.message_cache)) <= 1 and len(self.message_cache) == config.message_chain_size:
                     await message.channel.send(self.message_cache[0])
+                    self.message_cache.clear()
 
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
