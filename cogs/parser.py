@@ -1,7 +1,5 @@
-import discord
 from discord.ext import commands
-import util
-import traceback
+from collections import deque
 
 from config import config, messages
 config = config.Config
@@ -9,6 +7,7 @@ messages = messages.Messages
 
 
 class Parser(commands.Cog):
+    message_cache = deque(maxlen=config.message_chain_size)  # used for emoji chain
 
     def __init__(self, bot):
         self.bot = bot
@@ -26,6 +25,11 @@ class Parser(commands.Cog):
 
             elif message.content.startswith(messages.pr_match):
                 await message.channel.send(messages.pr_meme)
+
+            else:
+                self.message_cache.append(message.content)
+                if len(set(self.message_cache)) <= 1 and len(self.message_cache) == 3:
+                    await message.channel.send(self.message_cache[0])
 
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
