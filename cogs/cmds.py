@@ -41,7 +41,7 @@ class Cmds(commands.Cog):
     async def sayd(self, ctx, target_channel: str = None, *args):
         """Repeats the user's message and deletes the original"""
 
-        if isinstance(ctx.message.channel, discord.DMChannel) and target_channel != None:
+        if isinstance(ctx.message.channel, discord.DMChannel) and target_channel:
             guild = self.bot.get_guild(config.guild_id)
             if guild.get_member(ctx.message.author.id):
                 for channel in guild.text_channels:
@@ -58,7 +58,7 @@ class Cmds(commands.Cog):
                 return
 
         else:
-            if target_channel == None:
+            if target_channel is None:
                 return
 
             await ctx.message.delete()
