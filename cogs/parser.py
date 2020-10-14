@@ -28,7 +28,7 @@ class Parser(commands.Cog):
 
             else:
                 self.message_cache.append(message.content)
-                if len(set(self.message_cache)) <= 1 and len(self.message_cache) == 3:
+                if len(set(self.message_cache)) <= 1 and len(self.message_cache) == config.message_chain_size:
                     await message.channel.send(self.message_cache[0])
 
     @commands.Cog.listener()
