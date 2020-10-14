@@ -7,6 +7,7 @@ from config import config, messages
 config = config.Config
 messages = messages.Messages
 
+
 class Parser(commands.Cog):
 
     def __init__(self, bot):
@@ -32,8 +33,10 @@ class Parser(commands.Cog):
             guild = self.bot.get_guild(config.guild_id)
             channel = guild.get_channel(payload.channel_id)
             message = await channel.fetch_message(payload.message_id)
-            if (message.pinned): return
+            if message.pinned:
+                return
             await message.pin()
+
 
 def setup(bot):
     bot.add_cog(Parser(bot))

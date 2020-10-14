@@ -8,10 +8,12 @@ from config import config, messages
 config = config.Config
 messages = messages.Messages
 
+
 def command_list():
     with open("commands.md", "r", encoding="utf-8") as f:
         txt = f.read()
     return txt
+
 
 class Cmds(commands.Cog):
 
@@ -139,6 +141,7 @@ class Cmds(commands.Cog):
         """Shows available commands"""
         # NOTE: Help does not work (reserved)
         await ctx.send(util.command_list())
+
 
 def setup(bot):
     bot.add_cog(Cmds(bot))

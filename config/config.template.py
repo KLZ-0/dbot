@@ -1,5 +1,6 @@
 import os
 
+
 class Config:
     key = ""
     command_prefix = "!"
@@ -14,3 +15,5 @@ class Config:
 
     admin_id = 0
     guild_id = 0
+
+    message_chain_size = 2
